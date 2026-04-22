@@ -6,11 +6,15 @@
       name="description"
       content="A Easy Doc digitaliza comprovantes de entrega para transportadoras, acelerando pagamentos, reduzindo custos e integrando informações em tempo real."
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
     <link rel="icon" type="image/svg+xml" href="/teste-abrasivo-digital/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EasyDoc</title>
-    <script type="module" crossorigin src="/teste-abrasivo-digital/assets/index-C_wst7V0.js"></script>
-    <link rel="stylesheet" crossorigin href="/teste-abrasivo-digital/assets/index-CU3i_9gm.css">
+    <script type="module" crossorigin src="/teste-abrasivo-digital/assets/index-DPWcgDWv.js"></script>
+    <link rel="stylesheet" crossorigin href="/teste-abrasivo-digital/assets/index-CqYikrU6.css">
   </head>
   <body>
     <header>
@@ -707,6 +711,7 @@
               name="name"
               placeholder="Rubem Motta Coelho"
               required
+              autocomplete="name"
             />
           </div>
 
@@ -718,6 +723,7 @@
               name="email"
               placeholder="rubem.coelho@logicoop.com"
               required
+              autocomplete="email"
             />
           </div>
 
@@ -729,6 +735,7 @@
               id="phone"
               placeholder="(11) 3030.3030"
               required
+              autocomplete="tel"
             />
           </div>
 
@@ -740,13 +747,14 @@
               id="enterprise"
               placeholder="Logicoop Logística e Transporte de Cargas"
               required
+              autocomplete="organization"
             />
           </div>
 
           <div class="state-field">
             <label for="state">Estado</label>
             <select name="state" id="state">
-              <option value="">Selecione um estado</option>
+              <!-- <option value="">Selecione um estado</option> -->
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
               <option value="AP">Amapá</option>
@@ -771,7 +779,7 @@
               <option value="RO">Rondônia</option>
               <option value="RR">Roraima</option>
               <option value="SC">Santa Catarina</option>
-              <option value="SP">São Paulo</option>
+              <option value="SP" selected>São Paulo</option>
               <option value="SE">Sergipe</option>
               <option value="TO">Tocantins</option>
             </select>
@@ -779,7 +787,9 @@
 
           <div class="city-field">
             <label for="city">Cidade</label>
-            <input type="text" name="city" id="city" />
+            <select name="city" id="city">
+              
+            </select>
           </div>
 
           <div class="message-field">
@@ -865,5 +875,6 @@
         <p class="credit">Desenvolvido por <strong>Abrasivo Digital</strong></p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
   </body>
 </html>
