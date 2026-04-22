@@ -6,6 +6,10 @@
       name="description"
       content="A Easy Doc digitaliza comprovantes de entrega para transportadoras, acelerando pagamentos, reduzindo custos e integrando informações em tempo real."
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="src/styles/reset.css" />
     <link rel="stylesheet" href="src/styles/base.css" />
@@ -709,6 +713,7 @@
               name="name"
               placeholder="Rubem Motta Coelho"
               required
+              autocomplete="name"
             />
           </div>
 
@@ -720,6 +725,7 @@
               name="email"
               placeholder="rubem.coelho@logicoop.com"
               required
+              autocomplete="email"
             />
           </div>
 
@@ -731,6 +737,7 @@
               id="phone"
               placeholder="(11) 3030.3030"
               required
+              autocomplete="tel"
             />
           </div>
 
@@ -742,13 +749,14 @@
               id="enterprise"
               placeholder="Logicoop Logística e Transporte de Cargas"
               required
+              autocomplete="organization"
             />
           </div>
 
           <div class="state-field">
             <label for="state">Estado</label>
             <select name="state" id="state">
-              <option value="">Selecione um estado</option>
+              <!-- <option value="">Selecione um estado</option> -->
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
               <option value="AP">Amapá</option>
@@ -773,7 +781,7 @@
               <option value="RO">Rondônia</option>
               <option value="RR">Roraima</option>
               <option value="SC">Santa Catarina</option>
-              <option value="SP">São Paulo</option>
+              <option value="SP" selected>São Paulo</option>
               <option value="SE">Sergipe</option>
               <option value="TO">Tocantins</option>
             </select>
@@ -781,7 +789,9 @@
 
           <div class="city-field">
             <label for="city">Cidade</label>
-            <input type="text" name="city" id="city" />
+            <select name="city" id="city">
+              
+            </select>
           </div>
 
           <div class="message-field">
@@ -867,6 +877,7 @@
         <p class="credit">Desenvolvido por <strong>Abrasivo Digital</strong></p>
       </div>
     </footer>
-    <script type="module" src="/src/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script type="module" src="/src/main.js" ></script>
   </body>
 </html>

@@ -8,3 +8,14 @@
   box-sizing: border-box;
   list-style: none;
 }
+
+input, select, textarea {
+  outline: none;
+
+  background-color: #fff;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  -webkit-text-fill-color: #333;
+}

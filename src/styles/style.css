@@ -13,6 +13,8 @@
   --cardbox: #fff6f7;
 }
 
+/* ================== HEADER ====================== */
+
 header {
   display: flex;
   justify-content: center;
@@ -39,7 +41,7 @@ header nav {
 }
 
 header nav.scrolled {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 header nav .main-logo {
@@ -103,6 +105,8 @@ header nav .nav-opts .primary-btn {
   border-radius: 50px;
 }
 
+/* ================== HERO SECTION ====================== */
+
 main .hero .hero-intro {
   position: relative;
   display: flex;
@@ -149,6 +153,8 @@ main .hero .hero-video iframe {
   border-radius: 20px;
 }
 
+/* ================== PROBLEM SECTION ====================== */
+
 main .problem {
   display: flex;
   flex-direction: column;
@@ -181,6 +187,8 @@ main .problem .items .item {
   padding: 2rem;
   border-radius: 10px 20px;
 }
+
+/* ================== DIFFICULTIES SECTION ====================== */
 
 main .difficulties {
   display: flex;
@@ -222,6 +230,8 @@ main .difficulties .items .item .content {
   flex-direction: column;
 }
 
+/* ================== CTA SECTION ====================== */
+
 main .cta {
   display: flex;
   justify-content: center;
@@ -236,6 +246,8 @@ main .cta .content {
   width: 100%;
   height: 18rem;
 }
+
+/* ================== PROBLEM-ROOT SECTION ====================== */
 
 main .problem-root {
   display: flex;
@@ -285,6 +297,8 @@ main .problem-root .content .items .item {
   background-color: #ffffff;
   border-radius: 10px 20px;
 }
+
+/* ================== TECHNOLOGY SECTION ====================== */
 
 main .technology {
   display: flex;
@@ -355,6 +369,8 @@ main .technology .content .image img {
   object-fit: contain;
 }
 
+/* ================== BENEFITS SECTION ====================== */
+
 main .benefits {
   position: relative;
   background-color: #000000;
@@ -423,6 +439,8 @@ main .benefits .items .item p {
   margin-top: 1rem;
   text-align: center;
 }
+
+/* ================== PROCESS SECTION ====================== */
 
 main .process {
   margin-top: 4rem;
@@ -493,6 +511,8 @@ main .process .items .item .content h3 {
   font-size: 1.4rem;
 }
 
+/* ================== CASE SECTION ====================== */
+
 main .case {
   margin-top: 4rem;
   display: flex;
@@ -556,6 +576,8 @@ main .case .video iframe {
   width: 100%;
   height: 100%;
 }
+
+/* ================== TESTIMONIALS SECTION ====================== */
 
 main .testimonials {
   display: flex;
@@ -649,6 +671,8 @@ main .testimonials .carousel .carousel-btn.active {
   height: 12px;
 }
 
+/* ================== BRANDS SECTION ====================== */
+
 main .brands {
   overflow: hidden;
   display: flex;
@@ -689,6 +713,8 @@ main .brands .track img {
   }
 }
 
+/* ================== CTA-2 SECTION ====================== */
+
 main .cta-2 {
   display: flex;
   justify-content: center;
@@ -702,6 +728,8 @@ main .cta-2 .image {
   width: 100%;
   height: 17rem;
 }
+
+/* ================== FORM SECTION ====================== */
 
 main .form {
   display: flex;
@@ -743,7 +771,7 @@ main .form form {
 .email-field label::after,
 .phone-field label::after,
 .enterprise-field label::after {
-  content: '';
+  content: "";
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -787,6 +815,8 @@ main .form form {
   padding: 1rem;
   height: 8rem;
   resize: none;
+  border-radius: 5px;
+  border: solid 2px var(--medium-red);
 }
 
 main .form form label {
@@ -797,17 +827,45 @@ main .form form label {
 }
 
 main .form form input,
-main .form form select{
+main .form form select {
+  outline: none;
   padding: 0.7rem 1rem;
   border-radius: 5px;
   border: solid 2px var(--medium-red);
 }
+
+main .form form input:focus,
+main .form form textarea:focus
+ {
+  outline: none;
+  border: solid 2px var(--red);
+}
+
+.choices__input {
+  width: 100% !important;
+}
+
+.choices__inner {
+  border-radius: 5px;
+  border: solid 2px var(--medium-red);
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.choices.is-open .choices__inner {
+  outline: none;
+  border: solid 2px var(--red);
+}
+
+
 
 main .form form button[type="submit"] {
   grid-column: 3;
   grid-row: 4;
   justify-self: end;
 }
+
+/* ================== FOOTER ====================== */
 
 footer {
   margin-top: 4rem;
@@ -848,18 +906,18 @@ footer .easydoc-info .logo {
   align-items: center;
   gap: 1rem;
 }
-footer .easydoc-info .logo svg{
+footer .easydoc-info .logo svg {
   height: 1.2rem;
   border-right: 1px solid var(--light-text);
   padding-right: 1rem;
 }
-footer .easydoc-info .phone{
+footer .easydoc-info .phone {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-footer .easydoc-info .phone .contact{
+footer .easydoc-info .phone .contact {
   color: var(--light-text);
   border: 2px solid var(--red);
   padding: 10px 20px;

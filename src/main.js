@@ -24,6 +24,66 @@ goTo(0);
 
 // ===== FORM VALIDATION =====
 
+const stateSelect = document.getElementById("state");
+const citySelect = document.getElementById("city");
+
+const stateChoices = new Choices(stateSelect, {
+  searchEnabled: false,
+  itemSelectText: "",
+  placeholder: true,
+  placeholderValue: "Selecione um estado",
+  shouldSort: false,
+});
+
+const cityChoices = new Choices(citySelect, {
+  searchEnabled: true,
+  itemSelectText: "",
+  placeholder: true,
+  placeholderValue: "Selecione uma cidade",
+  shouldSort: false,
+});
+
+async function fetchCities(state) {
+  const response = await fetch(
+    `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${state}/municipios`,
+  );
+  const cities = await response.json();
+  return cities;
+}
+
+async function init() {
+  const initialCities = await fetchCities(stateSelect.value);
+  cityChoices.setChoices(
+    initialCities.map((city) => ({
+      value: city.nome,
+      label: city.nome,
+    })),
+  );
+
+  cityChoices.setChoiceByValue(initialCities[0].nome);
+}
+
+init();
+
+stateSelect.addEventListener("change", async () => {
+  const state = stateSelect.value;
+
+  if (!state) return;
+
+  const cities = await fetchCities(state);
+
+  cityChoices.clearStore();
+  cityChoices.clearChoices();
+  cityChoices.setChoices(
+    cities.map((city) => ({
+      value: city.nome,
+      label: city.nome,
+    })),
+  );
+
+  cityChoices.setChoiceByValue(cities[0].nome);
+});
+
 const phoneInput = document.getElementById("phone");
 
 phoneInput.addEventListener("input", () => {
@@ -33,11 +93,18 @@ phoneInput.addEventListener("input", () => {
   if (value.length <= 10) {
     value = value.replace(/^(\d{2})/, "($1) ").replace(/(\d{4})(\d)/, "$1-$2");
   } else {
-
     value = value.replace(/^(\d{2})/, "($1) ").replace(/(\d{5})(\d)/, "$1-$2");
   }
   phoneInput.value = value;
 });
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPhone(phone) {
+  return /^\(\d{2}\) \d{4,5}-\d{4}$/.test(phone);
+}
 
 const form = document.getElementById("form");
 
@@ -52,20 +119,30 @@ form.addEventListener("submit", (e) => {
     state: document.getElementById("state").value,
     city: document.getElementById("city").value.trim(),
     mensage: document.getElementById("message").value.trim(),
+  };
+
+  if (!isValidEmail(data.email)) {
+    alert("Por favor, insira um e-mail válido.");
+    return;
+  }
+
+  if (!isValidPhone(data.phone)) {
+    alert("Por favor, insira um número válido.");
+    return;
   }
 
   window.alert("Form enviado!");
+  console.log(data);
 });
-
 
 // ===== FOOTER CONTACT =====
 
-const contactBtn = document.getElementById('contact-btn');
+const contactBtn = document.getElementById("contact-btn");
 
-contactBtn.addEventListener('click', () => {
-  navigator.clipboard.writeText('+55 (11) 2227.3076').then(() => {
+contactBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText("+55 (11) 2227.3076").then(() => {
     const original = contactBtn.textContent;
-    contactBtn.textContent = 'Copiado!';
-    setTimeout(() => contactBtn.textContent = original, 2000);
+    contactBtn.textContent = "Copiado!";
+    setTimeout(() => (contactBtn.textContent = original), 2000);
   });
 });
