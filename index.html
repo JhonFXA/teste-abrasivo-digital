@@ -124,19 +124,6 @@
         </ul>
         <div class="nav-opts">
           <a href="#contact" class="primary-btn">Solicitar demonstração</a>
-          <button class="menu-btn">
-            <svg
-              width="25"
-              height="19"
-              viewBox="0 0 25 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0.625 17.5H19.375" stroke="#D10010" stroke-width="3" />
-              <path d="M0 9.5H25" stroke="#D10010" stroke-width="3" />
-              <path d="M6.25 1.5H25" stroke="#D10010" stroke-width="3" />
-            </svg>
-          </button>
           <div class="user-links">
             <a href="/login">
               <img src="src/assets/icons/user-icon.svg" alt="" /> Login
@@ -146,6 +133,19 @@
             </a>
           </div>
         </div>
+        <button class="menu-btn" id="menu-btn">
+          <svg
+            width="25"
+            height="19"
+            viewBox="0 0 25 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0.625 17.5H19.375" stroke="#D10010" stroke-width="3" />
+            <path d="M0 9.5H25" stroke="#D10010" stroke-width="3" />
+            <path d="M6.25 1.5H25" stroke="#D10010" stroke-width="3" />
+          </svg>
+        </button>
       </nav>
     </header>
     <main id="home" class="app">
@@ -712,9 +712,9 @@
               id="name"
               name="name"
               placeholder="Rubem Motta Coelho"
-              required
               autocomplete="name"
             />
+            <span class="error" id="name-error"></span>
           </div>
 
           <div class="email-field">
@@ -724,9 +724,9 @@
               id="email"
               name="email"
               placeholder="rubem.coelho@logicoop.com"
-              required
               autocomplete="email"
             />
+            <span class="error" id="email-error"></span>
           </div>
 
           <div class="phone-field">
@@ -736,9 +736,9 @@
               name="phone"
               id="phone"
               placeholder="(11) 3030.3030"
-              required
               autocomplete="tel"
             />
+            <span class="error" id="phone-error"></span>
           </div>
 
           <div class="enterprise-field">
@@ -748,15 +748,14 @@
               name="enterprise"
               id="enterprise"
               placeholder="Logicoop Logística e Transporte de Cargas"
-              required
               autocomplete="organization"
             />
+            <span class="error" id="enterprise-error"></span>
           </div>
 
           <div class="state-field">
             <label for="state">Estado</label>
             <select name="state" id="state">
-              <!-- <option value="">Selecione um estado</option> -->
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
               <option value="AP">Amapá</option>
@@ -789,9 +788,7 @@
 
           <div class="city-field">
             <label for="city">Cidade</label>
-            <select name="city" id="city">
-              
-            </select>
+            <select name="city" id="city"></select>
           </div>
 
           <div class="message-field">
@@ -878,6 +875,6 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    <script type="module" src="/src/main.js" ></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -8,6 +8,25 @@ window.addEventListener("scroll", () => {
   }
 });
 
+const links = document.querySelector(".links");
+const menuBtn = document.getElementById("menu-btn");
+menuBtn.addEventListener("click", () => {
+  const isOpen = links.classList.toggle("open");
+
+  menuBtn.innerHTML = isOpen
+    ? // ícone de fechar (X)
+      `<svg width="25" height="19" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L24 24" stroke="#D10010" stroke-width="3"/>
+        <path d="M24 1L1 24" stroke="#D10010" stroke-width="3"/>
+      </svg>`
+    : // ícone de menu (hamburguer)
+      `<svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.625 17.5H19.375" stroke="#D10010" stroke-width="3"/>
+        <path d="M0 9.5H25" stroke="#D10010" stroke-width="3"/>
+        <path d="M6.25 1.5H25" stroke="#D10010" stroke-width="3"/>
+      </svg>`;
+});
+
 const items = document.querySelectorAll(".testimonials .item");
 const btns = document.querySelectorAll(".testimonials .carousel-btn");
 
@@ -28,7 +47,7 @@ const stateSelect = document.getElementById("state");
 const citySelect = document.getElementById("city");
 
 const stateChoices = new Choices(stateSelect, {
-  searchEnabled: false,
+  searchEnabled: true,
   itemSelectText: "",
   placeholder: true,
   placeholderValue: "Selecione um estado",
@@ -106,6 +125,12 @@ function isValidPhone(phone) {
   return /^\(\d{2}\) \d{4,5}-\d{4}$/.test(phone);
 }
 
+function showError(el, message) {
+  el.textContent = message;
+  el.classList.add("visible");
+  setTimeout(() => el.classList.remove("visible"), 3000);
+}
+
 const form = document.getElementById("form");
 
 form.addEventListener("submit", (e) => {
@@ -121,15 +146,50 @@ form.addEventListener("submit", (e) => {
     mensage: document.getElementById("message").value.trim(),
   };
 
+  const errors = {
+    name: document.getElementById("name-error"),
+    email: document.getElementById("email-error"),
+    phone: document.getElementById("phone-error"),
+    enterprise: document.getElementById("enterprise-error"),
+  };
+
+  Object.values(errors).forEach((el) => el.classList.remove("visible"));
+
+  let valid = true;
+
+  if (!data.name) {
+    showError(errors.name, "Por favor, insira seu nome.");
+    valid = false;
+  }
+
   if (!isValidEmail(data.email)) {
-    alert("Por favor, insira um e-mail válido.");
-    return;
+    showError(errors.email, "Por favor, insira um e-mail válido.");
+    valid = false;
   }
 
   if (!isValidPhone(data.phone)) {
-    alert("Por favor, insira um número válido.");
-    return;
+    showError(errors.phone, "Por favor, insira um telefone válido.");
+    valid = false;
   }
+
+  if (!data.enterprise) {
+    showError(errors.enterprise, "Por favor, insira o nome da empresa.");
+    valid = false;
+  }
+
+  if (!isValidPhone(data.phone)) {
+    errors.phone.textContent = "Por favor, insira um telefone válido.";
+    errors.phone.classList.add("visible");
+    valid = false;
+  }
+
+  if (!data.enterprise) {
+    errors.enterprise.textContent = "Por favor, insira o nome da empresa.";
+    errors.enterprise.classList.add("visible");
+    valid = false;
+  }
+
+  if (!valid) return;
 
   window.alert("Form enviado!");
   console.log(data);
