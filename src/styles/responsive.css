@@ -1,0 +1,474 @@
+/* ========================
+   TABLET — até 1024px
+======================== */
+@media (max-width: 1024px) {
+  header nav {
+    padding-inline: 30px;
+  }
+
+  header nav .links {
+    display: none;
+  }
+
+  header nav .nav-opts .menu-btn {
+    display: block;
+  }
+
+  header nav .nav-opts .user-links {
+    display: none;
+  }
+
+  header nav .nav-opts .primary-btn {
+    margin-right: 0;
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 0;
+    background: none;
+    color: var(--red);
+  }
+
+  main .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .hero .hero-intro {
+    width: 100%;
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+
+  main .hero .hero-intro h1 {
+    text-align: center;
+    width: 80%;
+  }
+
+  main .hero .hero-intro p {
+    text-align: center;
+    width: 80%;
+  }
+
+  main .hero .hero-video iframe {
+    width: 80%;
+    height: 25rem;
+  }
+
+  main .problem .items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main .problem .items .item {
+    width: 45%;
+  }
+
+  main .difficulties .items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main .difficulties .items .item {
+    width: 45%;
+  }
+
+  main .problem-root {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  main .problem-root .image img {
+    width: 100%;
+  }
+
+  main .problem-root .content {
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+
+  main .problem-root .content .text h2,
+  main .problem-root .content .text p {
+    width: 80%;
+  }
+
+  main .technology .text p {
+    width: 80%;
+  }
+
+  main .technology .content {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  main .technology .content .image img {
+    width: 100%;
+  }
+
+  main .benefits .text h2,
+  main .benefits .text p {
+    width: 80%;
+  }
+
+  main .benefits .items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main .benefits .items .item {
+    width: 45%;
+  }
+
+  main .process .content,
+  main .process .items {
+    max-width: 80%;
+  }
+
+  main .case {
+    flex-direction: column;
+  }
+
+  main .case .content {
+    padding: 4rem 2rem;
+  }
+
+  main .case .content .item p {
+    font-size: 0.9rem;
+  }
+
+  main .case .video iframe {
+    width: 100%;
+    height: 400px;
+  }
+
+  main .form h2 {
+    width: 80%;
+  }
+
+  main .form form {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+  }
+
+  .name-field {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .email-field {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .phone-field {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .enterprise-field {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .state-field {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .city-field {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .message-field {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+
+  main .form form button[type="submit"] {
+    grid-column: 2;
+    grid-row: 5;
+    justify-self: end;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  footer .easydoc-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  footer .text {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+}
+
+/* ========================
+   MOBILE — até 768px
+======================== */
+@media (max-width: 768px) {
+  header {
+    align-items: start;
+  }
+
+  header nav {
+    width: 100%;
+    font-size: 10px;
+    border-radius: 0px;
+    padding-inline: 20px;
+  }
+
+  header nav .main-logo {
+    height: 0.9rem;
+  }
+
+  header nav .links {
+    display: none;
+  }
+
+  header nav .nav-opts .primary-btn {
+    margin-right: 0;
+    font-size: 0.8rem;
+    width: fit-content;
+    padding: 0;
+    background: none;
+    color: var(--red);
+  }
+
+  header nav .nav-opts .menu-btn {
+    display: block;
+  }
+
+  header nav .nav-opts .user-links {
+    display: none;
+  }
+
+  main .hero .hero-intro {
+    background-image: url("/src/assets/images/hero-bg-mobile.png");
+  }
+
+  main .hero .hero-intro h1 {
+    text-align: center;
+    margin-top: 150px;
+    width: 90%;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  main .hero .hero-intro p {
+    text-align: center;
+    color: var(--light-text);
+    font-size: 1rem;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  main .hero .hero-video iframe {
+    position: relative;
+    width: 90%;
+    height: 20rem;
+    top: -90px;
+    border-radius: 20px;
+  }
+
+  main .problem .items {
+    flex-direction: column;
+  }
+
+  main .problem .items .item {
+    width: 90%;
+  }
+
+  main .difficulties .items .item {
+    width: 90%;
+  }
+  main .cta .content {
+    background-image: url("/src/assets/images/cta-mobile.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 28rem;
+  }
+
+  main .problem-root {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  main .problem-root .content {
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 0;
+  }
+
+  main .problem-root .content .text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  main .problem-root .content .text h2,
+  main .problem-root .content .text p {
+    max-width: 90%;
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  main .technology .text p {
+    text-align: start;
+    width: 90%;
+    line-height: 1.8rem;
+  }
+
+  main .technology .content {
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  main .technology .content .items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  main .benefits .text {
+    align-items: center;
+  }
+  main .benefits .text h2,
+  main .benefits .text p {
+    width: 90%;
+  }
+
+  main .benefits .items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .benefits .items .item {
+    max-width: 90%;
+  }
+
+  main .process .content,
+  main .process .items {
+    max-width: 90%;
+  }
+
+  main .case {
+    flex-direction: column;
+  }
+
+  main .case .content {
+    padding: 4rem 2rem;
+  }
+
+  main .case .content .item p {
+    font-size: 0.9rem;
+  }
+
+  main .case .video iframe {
+    width: 100%;
+    height: 400px;
+  }
+
+  main .testimonials .items {
+    max-width: 90%;
+    width: 100%;
+  }
+
+  main .testimonials .items .item {
+    width: 100%;
+    height: 30rem;
+    padding: 2rem 2rem;
+  }
+
+  main .testimonials .items .item .eclipse {
+    display: none;
+  }
+
+  main .cta-2 .image {
+    background-image: url("/src/assets/images/cta2-mobile.png");
+    height: 30rem;
+  }
+
+  main .form h2 {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  main .form form {
+    grid-template-columns: 1fr;
+    width: 90%;
+    padding: 1.5rem 1rem;
+  }
+
+  .name-field {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .email-field {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .phone-field {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .enterprise-field {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .state-field {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  .city-field {
+    grid-column: 1;
+    grid-row: 6;
+  }
+  .message-field {
+    grid-column: 1;
+    grid-row: 7;
+  }
+
+  main .form form button[type="submit"] {
+    grid-column: 1;
+    grid-row: 8;
+    justify-self: end;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  footer .easydoc-info {
+    flex-direction: column-reverse;
+    border: 0;
+  }
+
+  footer .easydoc-info .logo {
+    border-top: 2px solid #232323;
+    margin-top: 2rem;
+    padding-top: 3rem;
+  }
+
+  footer .easydoc-info .logo svg {
+    border-right: 0;
+    padding-right: 0;
+  }
+  footer .easydoc-info .logo p {
+    display: none;
+  }
+
+  footer .text {
+    text-align: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+
+/* ========================
+   DESKTOP GRANDE — 1440px+
+======================== */
+@media (min-width: 1440px) {
+}

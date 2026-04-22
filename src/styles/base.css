@@ -1,0 +1,74 @@
+html {
+  font-family: var(--open-sans);
+  font-size: 16px;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--readex);
+}
+
+.primary-btn, .secondary-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--readex);
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all ease-in-out .1s;
+}
+
+.primary-btn {
+  color: var(--light-text);
+  background-color: var(--red);
+  padding-inline: 25px;
+  padding-block: 12px;
+  border: solid 4px transparent;
+  font-size: 14px;
+}
+
+.primary-btn:hover {
+  color: var(--red);
+  background: none;
+  border: solid 4px var(--border);
+}
+
+.secondary-btn {
+  color: var(--dark-text);
+  background-color: #FFFFFF;
+  padding: 25px 27px;
+  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.243) 0px 10px 10px;
+}
+
+.secondary-btn:hover {
+  color: var(--red);
+  padding: 25px 35px;
+  box-shadow: rgba(0, 0, 0, 0.243) 0px 15px 10px;
+}
